@@ -8,5 +8,10 @@ import math
 
 
 def floor(n: float) -> float:
-    """REturn the floor of an int"""
+    """Return the floor of an int
+
+    Args:
+    n(float): a float to be floored
+
+    """
     return math.floor(n)
