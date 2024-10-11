@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
 """
-Modules Imported: None
+Modules Imported: typing
+
+typing: access default and non-default type hints
 
 """
+from typing import List
+from typing import Union
 
 
-def sum_mixed_list(mxd_lst: list) -> float:
+def sum_mixed_list(mxd_lst: List[Union[int, float]]) -> float:
     """
     Returns sum of list of mixed data types
 
@@ -13,7 +17,4 @@ def sum_mixed_list(mxd_lst: list) -> float:
     mxd_lst(list): list of int and floats
 
     """
-    sum: float = 0.0
-    for value in mxd_lst:
-        sum += float(value)
-    return sum
+    return sum(mxd_lst)
