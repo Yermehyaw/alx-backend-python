@@ -5,9 +5,10 @@ Modules Imported: None
 typing: Provide types for py and earlier
 """
 from typing import Union
+from typing import Tuple
 
 
-def to_kv(k: str, v: Union[int, float]) -> tuple:
+def to_kv(k: str, v: Union[int, float]) -> Tuple[str, Union[int, float]]:
     """
     Return a new tuple
 
@@ -16,4 +17,4 @@ def to_kv(k: str, v: Union[int, float]) -> tuple:
     v(int | float): int or float data obj
 
     """
-    return tuple([k, v])
+    return k, v * v
