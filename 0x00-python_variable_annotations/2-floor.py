@@ -7,7 +7,7 @@ math: carry out mathematical operations
 import math
 
 
-def floor(n: float) -> float:
+def floor(n: float) -> int:
     """Return the floor of an int
 
     Args:
