@@ -8,4 +8,12 @@ from typing import Union
 
 
 def to_kv(k: str, v: Union[int, float]) -> tuple:
+    """
+    Return a new tuple
+
+    Args: 
+    k(str): string
+    v(int | float): int or float data obj
+
+    """
     return tuple([k, v])
