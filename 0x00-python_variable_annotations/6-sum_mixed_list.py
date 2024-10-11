@@ -5,7 +5,7 @@ Modules Imported: None
 """
 
 
-def sum_mixed_list(mxd_lst: list[int | float]) -> float:
+def sum_mixed_list(mxd_lst: list) -> float:
     """
     Returns sum of list of mixed data types
 
