@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Duck type parameters an dreturn values of a function
+Duck type the parameters and return values of a function
 
 Modules Imported: typing
 
@@ -23,4 +23,4 @@ def element_length(lst: Iterator[Sequence]) -> List[Tuple[Sequence, int]]:
     Return:
     An abstract list of abstract tuple of a sequence
     """
-    return [(i, len(i)) for i in lst]
+    return [([i], len(i)) for i in lst]
