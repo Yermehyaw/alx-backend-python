@@ -5,7 +5,7 @@ Modules Imported: None
 """
 
 
-def sum_list(input_list: list[float]) -> float:
+def sum_list(input_list: list) -> float:
     """
     Returns sum of floats
 
