@@ -13,7 +13,7 @@ def sum_list(input_list: list) -> float:
     input_list(list): list of floats
 
     """
-    sum: float = 0.0
+    # sum: float = 0.0
     for elem in input_list:
         sum += elem
     return sum
