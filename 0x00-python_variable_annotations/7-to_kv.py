@@ -12,7 +12,7 @@ def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
     """
     Return a new tuple
 
-    Args: 
+    Args:
     k(str): string
     v(int | float): int or float data obj
 
