@@ -23,4 +23,5 @@ def element_length(lst: Iterator[Sequence]) -> List[Tuple[Sequence, int]]:
     Return:
     An abstract list of abstract tuple of a sequence
     """
-    return [([i], len(i)) for i in lst]
+    # temp = []
+    return [(i, len(i)) for i in lst]
