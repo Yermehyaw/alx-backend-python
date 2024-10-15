@@ -21,8 +21,10 @@ async def wait_n(n: int, max_delay: int) -> list:
     """Return a list of all random return times"""
     delays = []
     for i in range(n):
-        d_n = asyncio.create_task(wait_random(max_delay))
-        delay = await d_n
-        delays.append(delay)
+        d_n = await wait_random(max_delay)
+        # delay = await d_n
+        delays.append(d_n)
 
+    # delay_time = []
+    # delay_time = (await asyncio.gather(*delays))
     return delays
