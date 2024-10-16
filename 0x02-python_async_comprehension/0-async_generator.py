@@ -1,4 +1,4 @@
-#!/usr/binnv python3
+#!/usr/bin env python3
 """
 An async generator func
 
