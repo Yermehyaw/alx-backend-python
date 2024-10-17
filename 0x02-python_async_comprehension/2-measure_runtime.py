@@ -22,7 +22,7 @@ async def measure_runtime() -> float:
     A float rep time elasped
     """
     start = time.perf_counter()
-    asyncio.gather(
+    await asyncio.gather(
         async_generator(),
         async_generator(),
         async_generator(),
