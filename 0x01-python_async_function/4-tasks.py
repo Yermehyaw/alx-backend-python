@@ -18,12 +18,12 @@ import random
 task_wait_random = __import__('3-tasks').task_wait_random
 
 
-def task_wait_n(n: int, max_delay: int) -> list:
+async def task_wait_n(n: int, max_delay: int) -> list:
     """Return a list of elasped times in calling each coroutine"""
-    cor_delays = []
+    # compile a list of Task objs from task_wait_random()
+    tasks = [task_wait_random(max_delay) for _ in range(n)]
 
-    for i in range(n):
-        d_n = task_wait_random(max_delay)
-        delays.append(d_n)
+    # Insert each completed task according to completion duration
+    compl_tasks = [await task for task in asyncio.as_completed(tasks)]
 
-    return cor_delays
+    return compl_tasks
