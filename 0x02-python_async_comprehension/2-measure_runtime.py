@@ -11,7 +11,7 @@ typing: custom types for python annotation
 import asyncio
 import random
 import time
-async_generator = __import__('0-async_generator').async_generator
+async_comprehension = __import__('1-async_comprehension').async_comprehension
 
 
 async def measure_runtime() -> float:   
@@ -23,10 +23,10 @@ async def measure_runtime() -> float:
     """
     start = time.perf_counter()
     await asyncio.gather(
-        async_generator(),
-        async_generator(),
-        async_generator(),
-        async_generator()
+        async_comprehension(),
+        async_comprehension(),
+        async_comprehension(),
+        async_comprehension()
     )
     end = time.perf_counter()
     return (end - start)
