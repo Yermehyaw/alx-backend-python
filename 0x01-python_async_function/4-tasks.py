@@ -15,10 +15,11 @@ wait_random:
 """
 import asyncio
 import random
+from typing import List
 task_wait_random = __import__('3-tasks').task_wait_random
 
 
-async def task_wait_n(n: int, max_delay: int) -> list:
+async def task_wait_n(n: int, max_delay: int) -> List[float]:
     """Return a list of elasped times in calling each coroutine"""
     # compile a list of Task objs from task_wait_random()
     tasks = [task_wait_random(max_delay) for _ in range(n)]
