@@ -8,7 +8,7 @@ random: generate random values
 typing: custom types for python annotation
 
 """
-from asyncio import gather
+import asyncio
 import random
 import time
 a_compr = __import__('1-async_comprehension').async_comprehension
@@ -22,6 +22,7 @@ async def measure_runtime() -> float:
     A float rep time elasped
     """
     start = time.perf_counter()
-    values = await gather(a_compr(), a_compr(), a_compr(), a_compr())
+    comprehensions = [a_compr(), a_compr(), a_compr(), a_compr()]
+    await asyncio.gather(*comprehensions)
     end = time.perf_counter()
     return (end - start)
