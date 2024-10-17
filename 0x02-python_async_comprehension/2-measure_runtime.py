@@ -11,10 +11,10 @@ typing: custom types for python annotation
 import asyncio
 import random
 import time
-async_comprehension = __import__('1-async_comprehension').async_comprehension
+a_compr = __import__('1-async_comprehension').async_comprehension
 
 
-async def measure_runtime() -> float:   
+async def measure_runtime() -> float:
     """
     Measures runtime
 
@@ -22,11 +22,6 @@ async def measure_runtime() -> float:
     A float rep time elasped
     """
     start = time.perf_counter()
-    await asyncio.gather(
-        async_comprehension(),
-        async_comprehension(),
-        async_comprehension(),
-        async_comprehension()
-    )
+    await asyncio.gather(a_compr(), a_compr(), a_compr(), a_compr())
     end = time.perf_counter()
     return (end - start)
