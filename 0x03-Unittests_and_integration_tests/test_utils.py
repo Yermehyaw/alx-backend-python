@@ -9,7 +9,8 @@ rrequests, typing
 from parameterized import parameterized
 from utils import (
     access_nested_map,
-    get_json
+    get_json,
+    memoize
 )
 from typing import (
     Any,
@@ -93,3 +94,31 @@ class TestGetJson(unittest.TestCase):
 
         # Test if the resp received is the same as the created response
         self.assertEqual(test_package, resp)
+
+
+class TestMemoize(unittest.TestCase):
+    """
+    Tests the memoize mthd in utils
+    """
+    def test_memoize(self):
+        """Tests memoization of memoize"""
+        class TestClass:
+            """Arbitrary class for testing purpose
+            """
+            def a_method(self):
+                """Arbitary test mthd"""
+                return 42
+
+            @memoize
+            def a_property(self):
+                """Property getter of a_method"""
+                return self.a_method()
+
+        @patch('TestClass.a_method')
+        def complete_test(self, mock_obj: Mock) -> None:
+            """Completes th test logic of testmemoize by patching a_method to
+            ensure the memoiztion logic works as intended"""
+            mock_obj.return_value = 42
+            TestClass.a_method()
+            TestClass.a_method()
+            mock_obj.assert_called_once()
