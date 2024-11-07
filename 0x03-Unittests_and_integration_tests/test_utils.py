@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-IIntegration tests using unittest module
+Integration tests using unittest module
 
 Modules imported: utils, unittest, patch,  parameterized,
-rrequests, typing
+requests, typing
 
 """
 from parameterized import parameterized
