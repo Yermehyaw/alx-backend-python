@@ -11,7 +11,8 @@ from client import GithubOrgClient
 import unittest
 from unittest.mock import (
     Mock,
-    patch
+    patch,
+    PropertyMock,
 )
 
 
@@ -32,3 +33,16 @@ class TestGithubOrgClient(unittest.TestCase):
             client.ORG_URL.format(org=client._org_name)
         )
         self.assertEqual({'org': org}, ret)
+
+    def test_public_repos(self) -> None:
+        """Test _public_repos, a property mthd"""
+        with patch(
+                'client.GithubOrgClient.org',
+                new_callable=PropertyMock
+        ) as mock_org:
+            mock_org.return_value = {'repos_url': 'https://api.url.com'}
+
+            client = GithubOrgClient('')  # to create an instance
+            ret = client._public_repos_url
+
+            self.assertEqual(ret, 'https://api.url.com')
